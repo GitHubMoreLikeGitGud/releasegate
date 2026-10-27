@@ -1,0 +1,21 @@
+[project]
+name = "releasegate"
+version = "0.1.0"
+description = "Authorize a PayPal payment up front; capture it only when the delivered video passes automated checks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+ocr = ["rapidocr_onnxruntime"]
+dev = ["pytest"]
+
+[project.scripts]
+releasegate = "releasegate.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["releasegate*"]
+
+[tool.setuptools.package-data]
+releasegate = ["static/*.html"]
